@@ -4,11 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>O∑BIX — Hardware Group</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@700,600,500,400&f[]=switzer@400,500,600,700&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Chakra+Petch:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#060A18;
@@ -30,7 +26,7 @@
   body{
     background-color:var(--bg);
     color:var(--text-1);
-    font-family:'Switzer',sans-serif;
+    font-family:'Manrope',sans-serif;
     background-image:
       radial-gradient(ellipse 900px 600px at 15% -10%, rgba(61,242,224,.10), transparent 60%),
       radial-gradient(ellipse 1000px 650px at 105% 5%, rgba(76,141,255,.09), transparent 58%),
@@ -39,7 +35,7 @@
     background-attachment:fixed;
     background-repeat:no-repeat;
   }
-  h1,h2,h3,.font-display{ font-family:'Clash Display',sans-serif; letter-spacing:-0.01em; }
+  h1,h2,h3,.font-display{ font-family:'Chakra Petch',sans-serif; font-weight:600; letter-spacing:-0.005em; }
   .font-mono{ font-family:'IBM Plex Mono',monospace; }
   .hidden{ display:none !important; }
 
@@ -197,6 +193,142 @@
   @media (prefers-reduced-motion: reduce){
     .reveal{ opacity:1; transform:none; transition:none; }
   }
+
+/* ===== Minimal reset (replaces Tailwind preflight for what we use) ===== */
+h1,h2,h3,h4,p,ul,ol{ margin:0; padding:0; }
+ul,ol{ list-style:none; }
+button{ font:inherit; color:inherit; background:none; border:none; cursor:pointer; }
+table{ border-collapse:collapse; border-spacing:0; }
+img{ display:block; max-width:100%; }
+a{ color:inherit; text-decoration:none; }
+.antialiased{ -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+
+/* ===== Layout ===== */
+.flex{ display:flex; }
+.flex-col{ flex-direction:column; }
+.flex-wrap{ flex-wrap:wrap; }
+.grid{ display:grid; }
+.inline-block{ display:inline-block; }
+.block{ display:block; }
+.items-center{ align-items:center; }
+.items-start{ align-items:flex-start; }
+.justify-between{ justify-content:space-between; }
+.justify-center{ justify-content:center; }
+.shrink-0{ flex-shrink:0; }
+.mx-auto{ margin-left:auto; margin-right:auto; }
+.relative{ position:relative; }
+.absolute{ position:absolute; }
+.sticky{ position:sticky; }
+.inset-0{ top:0; right:0; bottom:0; left:0; }
+.top-0{ top:0; }
+.z-50{ z-index:50; }
+.overflow-x-auto{ overflow-x:auto; }
+.min-w-\[640px\]{ min-width:640px; }
+
+/* ===== Borders / radius ===== */
+.border-b{ border-bottom-width:1px; border-bottom-style:solid; }
+.border-t{ border-top-width:1px; border-top-style:solid; }
+.rounded-lg{ border-radius:.5rem; }
+.rounded-2xl{ border-radius:1rem; }
+.rounded-full{ border-radius:9999px; }
+
+/* ===== Typography ===== */
+.text-left{ text-align:left; }
+.text-center{ text-align:center; }
+.font-medium{ font-weight:500; }
+.font-semibold{ font-weight:600; }
+.font-bold{ font-weight:700; }
+.leading-tight{ line-height:1.25; }
+.leading-relaxed{ line-height:1.625; }
+.tracking-wide{ letter-spacing:.025em; }
+.tracking-widest{ letter-spacing:.1em; }
+.text-xs{ font-size:.75rem; line-height:1rem; }
+.text-sm{ font-size:.875rem; line-height:1.25rem; }
+.text-base{ font-size:1rem; line-height:1.5rem; }
+.text-lg{ font-size:1.125rem; line-height:1.75rem; }
+.text-xl{ font-size:1.25rem; line-height:1.75rem; }
+.text-2xl{ font-size:1.5rem; line-height:2rem; }
+.text-3xl{ font-size:1.875rem; line-height:2.25rem; }
+.text-4xl{ font-size:2.25rem; line-height:2.5rem; }
+.text-6xl{ font-size:3.75rem; line-height:1; }
+
+/* ===== Sizing ===== */
+.w-2\.5{ width:.625rem; }
+.w-6{ width:1.5rem; }
+.w-10{ width:2.5rem; }
+.w-32{ width:8rem; }
+.w-full{ width:100%; }
+.h-2\.5{ height:.625rem; }
+.h-6{ height:1.5rem; }
+.h-10{ height:2.5rem; }
+.h-16{ height:4rem; }
+.h-32{ height:8rem; }
+.max-w-2xl{ max-width:42rem; }
+.max-w-3xl{ max-width:48rem; }
+.max-w-6xl{ max-width:72rem; }
+
+/* ===== Spacing: margin ===== */
+.mt-1{ margin-top:.25rem; } .mt-2{ margin-top:.5rem; } .mt-3{ margin-top:.75rem; }
+.mt-5{ margin-top:1.25rem; } .mt-6{ margin-top:1.5rem; } .mt-8{ margin-top:2rem; }
+.mt-10{ margin-top:2.5rem; } .mt-auto{ margin-top:auto; }
+.mb-1{ margin-bottom:.25rem; } .mb-2{ margin-bottom:.5rem; } .mb-3{ margin-bottom:.75rem; }
+.mb-4{ margin-bottom:1rem; } .mb-5{ margin-bottom:1.25rem; } .mb-6{ margin-bottom:1.5rem; }
+.mb-10{ margin-bottom:2.5rem; } .mb-14{ margin-bottom:3.5rem; } .mb-16{ margin-bottom:4rem; }
+.mb-20{ margin-bottom:5rem; } .mb-24{ margin-bottom:6rem; }
+
+/* ===== Spacing: padding ===== */
+.p-5{ padding:1.25rem; } .p-6{ padding:1.5rem; } .p-8{ padding:2rem; }
+.px-3{ padding-left:.75rem; padding-right:.75rem; }
+.px-4{ padding-left:1rem; padding-right:1rem; }
+.px-5{ padding-left:1.25rem; padding-right:1.25rem; }
+.px-6{ padding-left:1.5rem; padding-right:1.5rem; }
+.py-1{ padding-top:.25rem; padding-bottom:.25rem; }
+.py-2{ padding-top:.5rem; padding-bottom:.5rem; }
+.py-2\.5{ padding-top:.625rem; padding-bottom:.625rem; }
+.py-3{ padding-top:.75rem; padding-bottom:.75rem; }
+.py-4{ padding-top:1rem; padding-bottom:1rem; }
+.py-8{ padding-top:2rem; padding-bottom:2rem; }
+.py-14{ padding-top:3.5rem; padding-bottom:3.5rem; }
+.pt-14{ padding-top:3.5rem; } .pt-16{ padding-top:4rem; }
+.pb-4{ padding-bottom:1rem; } .pb-8{ padding-bottom:2rem; } .pb-16{ padding-bottom:4rem; }
+
+/* ===== Gap ===== */
+.gap-1{ gap:.25rem; } .gap-2{ gap:.5rem; } .gap-2\.5{ gap:.625rem; }
+.gap-3{ gap:.75rem; } .gap-4{ gap:1rem; } .gap-5{ gap:1.25rem; }
+
+/* ===== Grid columns ===== */
+.grid-cols-2{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+.grid-cols-3{ grid-template-columns:repeat(3,minmax(0,1fr)); }
+
+/* ===== space-y (child spacing) ===== */
+.space-y-2 > * + *{ margin-top:.5rem; }
+.space-y-2\.5 > * + *{ margin-top:.625rem; }
+.space-y-6 > * + *{ margin-top:1.5rem; }
+
+/* ===== Scrollbar hiding ===== */
+.no-scrollbar{ scrollbar-width:none; -ms-overflow-style:none; }
+.no-scrollbar::-webkit-scrollbar{ display:none; }
+
+/* ===== Responsive: sm (min-width:640px) ===== */
+@media (min-width:640px){
+  .sm\:flex{ display:flex; }
+  .sm\:grid-cols-3{ grid-template-columns:repeat(3,minmax(0,1fr)); }
+}
+
+/* ===== Responsive: md (min-width:768px) ===== */
+@media (min-width:768px){
+  .md\:grid-cols-2{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .md\:grid-cols-3{ grid-template-columns:repeat(3,minmax(0,1fr)); }
+  .md\:grid-cols-4{ grid-template-columns:repeat(4,minmax(0,1fr)); }
+  .md\:h-36{ height:9rem; }
+  .md\:w-36{ width:9rem; }
+  .md\:p-8{ padding:2rem; }
+  .md\:text-base{ font-size:1rem; line-height:1.5rem; }
+  .md\:text-lg{ font-size:1.125rem; line-height:1.75rem; }
+  .md\:text-4xl{ font-size:2.25rem; line-height:2.5rem; }
+  .md\:text-6xl{ font-size:3.75rem; line-height:1; }
+}
+
 </style>
 </head>
 <body class="antialiased is-loading">
